@@ -1,0 +1,14 @@
+  [VIVO] fran-oraculo-miu
+    phi_superposicion: 9158.79
+    version: V∞+27
+    nodo: V∞+27_ORQUESTADOR
+  [VIVO] miu-mesh-5ea7cd88-v270
+    version: V270
+    nodo: miu-mesh-5ea7cd88-v270
+  [VIVO] miu-beacon-5ea7cd88-v224
+  [VIVO] corpus-api-miu
+  [VIVO] miu-autonomo-v92
+    version: V92
+  [VIVO] nucleo-absorcion
+  [VIVO] nucleo-actualidad
+  [VIVO] nucleo-simulacion
