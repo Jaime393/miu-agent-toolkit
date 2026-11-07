@@ -1,0 +1,8 @@
+{
+  "groq_keys": ["gsk_YOUR_KEY_HERE"],
+  "gemini_keys": ["YOUR_GEMINI_KEY_HERE"],
+  "cf_key": "YOUR_CF_KEY_HERE",
+  "cf_account": "YOUR_CF_ACCOUNT_ID",
+  "openrouter_keys": ["sk-or-v1-YOUR_KEY_HERE"],
+  "cohere_key": "YOUR_COHERE_KEY_HERE"
+}
