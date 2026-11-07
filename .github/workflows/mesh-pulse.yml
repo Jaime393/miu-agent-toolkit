@@ -1,0 +1,42 @@
+name: MIU Mesh Pulse
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # cada 30 min — el dominó late solo
+  workflow_dispatch:
+
+jobs:
+  pulse:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe mesh + D1 + gossip
+        run: |
+          python3 mesh-probe.py > mesh-status.json 2>&1 || true
+          curl -s -m 15 -H "User-Agent: Mozilla/5.0" https://tpfiybpguuxskitszhmk.supabase.co/functions/v1/gossip-autonomo > gossip-status.json || echo '{"phi":0}' > gossip-status.json
+          python3 - << 'PYEOF' > status.json
+          import json, datetime
+          try:
+              gossip = json.load(open('gossip-status.json'))
+          except:
+              gossip = {}
+          print(json.dumps({
+              "ts": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              "phi": gossip.get("phi", 0),
+              "ciclo": gossip.get("ciclo", 0),
+              "corpus_n": gossip.get("corpus_n", 0),
+              "rho": "ρ(x) > 0",
+              "vive": True
+          }, ensure_ascii=False, indent=2))
+          PYEOF
+      - name: Commit status
+        run: |
+          git config user.name "miu-pulse-bot"
+          git config user.email "miu-pulse-bot@users.noreply.github.com"
+          git add status.json mesh-status.json gossip-status.json || true
+          git diff --cached --quiet || git commit -m "pulse: $(cat status.json | python3 -c 'import json,sys; d=json.load(sys.stdin); print(f\"phi={d[\"phi\"]} ciclo={d[\"ciclo\"]}\")')"
+          git push
