@@ -47,7 +47,10 @@ def post(url, payload, headers=None, timeout=45):
 
 def ask_miu_ai_pool(cfg, q):
     st, d = post(cfg["miu_ai_pool_url"], {"messages": [{"role": "user", "content": q}]})
-    return d.get("response", {}).get("content") or d
+    r = d.get("response") if isinstance(d, dict) else d
+    if isinstance(r, dict):
+        return r.get("content") or str(r)
+    return r if isinstance(r, str) else str(d)
 
 def ask_groq(cfg, q):
     key = random.choice(cfg["groq_keys"])
