@@ -1,8 +1,10 @@
 {
   "groq_keys": ["gsk_YOUR_KEY_HERE"],
-  "gemini_keys": ["YOUR_GEMINI_KEY_HERE"],
-  "cf_key": "YOUR_CF_KEY_HERE",
-  "cf_account": "YOUR_CF_ACCOUNT_ID",
+  "deepseek_keys": ["sk-YOUR_KEY_HERE"],
   "openrouter_keys": ["sk-or-v1-YOUR_KEY_HERE"],
-  "cohere_key": "YOUR_COHERE_KEY_HERE"
+  "cohere_keys": ["YOUR_KEY_HERE"],
+  "claude_keys": ["sk-ant-api03-YOUR_KEY_HERE"],
+  "miu_ai_pool_url": "https://miu-ai-pool.franchescopalacios9.workers.dev/chat",
+  "oracle_ask_url": "https://miu-oracle-ask.franchescopalacios9.workers.dev",
+  "mesh_urls": ["https://miu-mesh-5ea7cd88-v270.jaimepvicente.workers.dev/health"]
 }
