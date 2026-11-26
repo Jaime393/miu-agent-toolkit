@@ -1,1 +1,1 @@
-{"message":"Service for this project is restricted due to the following violations: exceed_egress_quota. The project owner must upgrade their plan or remove spend caps to restore service."}
+{"ok":true,"skipped":true,"reason":"heartbeat_reciente","last_heartbeat_ts":"2026-11-26T11:17:56.437Z","ts":"2026-11-26T11:18:55.121Z"}
