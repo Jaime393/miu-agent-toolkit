@@ -1,1 +1,1 @@
-{"ok":true,"skipped":true,"reason":"heartbeat_reciente","last_heartbeat_ts":"2026-11-26T20:23:36.465Z","ts":"2026-11-26T20:23:38.445Z"}
+{"ok":true,"ciclo":27368,"savia":1618,"gossip_n":4421,"corpus_n":36083,"heartbeat_v2":true,"thread_id":"v270-2026-11-27","phi":39235.5,"phi_fuente":"estado_miu.phi","phi_conflicto":false,"rho":1.05,"rho_fuente":"estado_miu.rho","rho_conflicto":false,"ts":"2026-11-27T03:04:20.600Z"}
